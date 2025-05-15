@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../core/services/cart.service';
 import { Product } from '../../interfaces/product';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

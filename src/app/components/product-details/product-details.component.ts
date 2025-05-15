@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../core/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../interfaces/product';
 import { AddtocartComponent } from "../addtocart/addtocart.component";

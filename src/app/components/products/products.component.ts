@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../core/services/product.service';
 import { Product } from '../../interfaces/product';
 import { TruncateWordsPipe } from '../../pipes/truncate-words.pipe';
 import { RouterLink } from '@angular/router';

@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { errorContext } from 'rxjs/internal/util/errorContext';
 import { ToastrService } from 'ngx-toastr';
