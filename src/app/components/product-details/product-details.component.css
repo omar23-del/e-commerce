@@ -1,0 +1,11 @@
+.custom-details {
+  margin-top: 100px !important;
+  margin-bottom: 200px !important;
+}
+
+.cart-button {
+  width: 50% !important;
+  position: relative;
+  top: 120px;
+  right: 40px;
+}

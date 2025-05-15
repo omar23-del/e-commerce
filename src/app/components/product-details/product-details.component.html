@@ -1,0 +1,29 @@
+<!-- product details -->
+
+<div class="custom-details container product-container" *ngIf="product">
+  <div class="row g-5">
+    <div class="col-12 col-md-5 text-center text-md-start">
+      <img id="productImage" [src]="product.image" [alt]="product.title"
+        class="product-img img-fluid w-50">
+    </div>
+
+    <div class="col-12 col-md-7">
+      <h2 id="productTitle">{{product.title}}</h2>
+      <h4 class="text-success" id="productPrice">${{product.price}}</h4>
+      <p class="text-muted">Category: <strong
+          id="productCategory">{{product.category}}</strong></p>
+
+      <div class="mb-3">
+        <span class="rating-stars" id="productRatingStars">
+          <i class="bi bi-star-fill golden-star"></i>{{product.rating.rate}}
+        </span>
+      </div>
+
+      <p id="productDescription">{{product.description}}</p>
+      <div class="cart-button">
+        <app-addtocart [product]="product"></app-addtocart>
+      </div>
+
+    </div>
+  </div>
+</div>

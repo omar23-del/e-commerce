@@ -1,0 +1,31 @@
+<section>
+  <h2>login</h2>
+
+  <form
+  [formGroup]="LoginForm"
+  (ngSubmit)="HandleLogin(LoginForm)"
+  >
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Your email..." formControlName="email" />
+      <div *ngIf="LoginForm.get('email')?.errors && (LoginForm.get('email')?.touched)" class="alert alert-danger">
+        <p *ngIf="LoginForm.get('email')?.getError('required')">Email is required</p>
+        <p *ngIf="LoginForm.get('email')?.getError('email')">Email is not valid</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" placeholder="Your password..." formControlName="password" />
+      <div *ngIf="LoginForm.get('password')?.errors && (LoginForm.get('password')?.touched)" class="alert alert-danger">
+        <p *ngIf="LoginForm.get('password')?.getError('required')">Password is required</p>
+        <p *ngIf="LoginForm.get('password')?.getError('pattern')">
+          Password must contain only letters, numbers, and be at least 6 characters
+        </p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary main-btn">login</button>
+  </form>
+</section>

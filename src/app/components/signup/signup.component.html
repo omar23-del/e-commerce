@@ -1,0 +1,58 @@
+<section>
+  <h2>Sign Up</h2>
+
+  <form [formGroup]="SignupForm" (ngSubmit)="HandleSubmit(SignupForm)">
+
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" placeholder="Your name..." formControlName="name" />
+      <div *ngIf="SignupForm.get('name')?.errors && (SignupForm.get('name')?.touched)" class="alert alert-danger">
+        <p *ngIf="SignupForm.get('name')?.getError('required')">Name is required</p>
+        <p *ngIf="SignupForm.get('name')?.getError('minlength')">Minimum length is 3</p>
+        <p *ngIf="SignupForm.get('name')?.getError('maxlength')">Maximum length is 30</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Your email..." formControlName="email" />
+      <div *ngIf="SignupForm.get('email')?.errors && (SignupForm.get('email')?.touched)" class="alert alert-danger">
+        <p *ngIf="SignupForm.get('email')?.getError('required')">Email is required</p>
+        <p *ngIf="SignupForm.get('email')?.getError('email')">Email is not valid</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" placeholder="Your password..." formControlName="password" />
+      <div *ngIf="SignupForm.get('password')?.errors && (SignupForm.get('password')?.touched)" class="alert alert-danger">
+        <p *ngIf="SignupForm.get('password')?.getError('required')">Password is required</p>
+        <p *ngIf="SignupForm.get('password')?.getError('pattern')">
+          Password must contain only letters, numbers, and be at least 6 characters
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Confirm Password</label>
+      <input type="password" class="form-control" placeholder="Confirm password..." formControlName="ConfirmPassword" />
+      <div *ngIf="SignupForm.get('ConfirmPassword')?.errors && (SignupForm.get('ConfirmPassword')?.touched)" class="alert alert-danger">
+        <p *ngIf="SignupForm.get('ConfirmPassword')?.getError('required')">Confirm Password is required</p>
+        <p *ngIf="SignupForm.get('ConfirmPassword')?.getError('notidentical')">Passwords do not match</p>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input type="text" class="form-control" placeholder="Your phone number..." formControlName="phonenumber" />
+      <div *ngIf="SignupForm.get('phonenumber')?.errors && (SignupForm.get('phonenumber')?.touched)" class="alert alert-danger">
+        <p *ngIf="SignupForm.get('phonenumber')?.getError('required')">Phone number is required</p>
+        <p *ngIf="SignupForm.get('phonenumber')?.getError('pattern')">Phone number must start with 010/011/012/015 and be 11 digits</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary main-btn" [disabled]="SignupForm.invalid">Submit</button>
+  </form>
+</section>
+
+

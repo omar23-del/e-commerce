@@ -1,0 +1,31 @@
+<nav class="both-nav navbar navbar-expand-lg bg-body-tertiary"
+  [ngClass]="{ 'bg-gray-transparent': isNavScrolled, 'bg-body-tertiary': !isNavScrolled }">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">
+      <img class="logo" src="/assets/images/store-2017.svg"
+        class="img-fulid w-25 h-25">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home"
+            routerLinkActive="active-link">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products"
+            routerLinkActive="active-link">products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart"
+            routerLinkActive="active-link">cart</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

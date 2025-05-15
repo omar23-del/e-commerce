@@ -1,0 +1,74 @@
+<div class="container my-5">
+  <h2 class="mb-4 text-center">🛒 Shopping Cart</h2>
+
+  <div class="row g-4" *ngIf="productArray.length > 0; else emptyCart">
+    <div class="col-12" *ngFor="let item of productArray">
+      <div
+        class="card p-3 d-flex flex-column flex-md-row align-items-center gap-3"
+        style="word-wrap: break-word;"
+      >
+        <img
+          [src]="item.image"
+          class="img-thumbnail flex-shrink-0"
+          alt="Product Image"
+          style="width: 100px; height: 100px; object-fit: contain;"
+        />
+
+        <div
+          class="flex-grow-1"
+          style="min-width: 0;"
+        >
+          <h5 class="text-truncate" title="{{ item.title }}">{{ item.title }}</h5>
+          <p class="mb-1 text-muted">Price: ${{ item.price }}</p>
+
+          <div class="d-flex align-items-center flex-wrap" style="gap: 0.5rem; max-width: 150px;">
+            <label
+              class="me-2 mb-1 mb-sm-0"
+              for="qty-{{ item.id }}"
+              style="white-space: nowrap;"
+            >
+              Quantity:
+            </label>
+            <input
+              id="qty-{{ item.id }}"
+              name="quantity"
+              type="number"
+              class="form-control"
+              style="min-width: 50px; max-width: 70px; padding: 0.25rem 0.5rem;"
+              [(ngModel)]="item.quantity"
+              min="1"
+              (ngModelChange)="updateQuantity(item.id, $event)"
+            />
+          </div>
+        </div>
+
+        <button
+          class="btn btn-danger mt-3 mt-md-0 flex-shrink-0 align-self-start align-md-self-center"
+          (click)="removeFromCart(item)"
+          style="white-space: nowrap;"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="card mt-4 p-3 d-flex flex-column flex-sm-row justify-content-end gap-2 align-items-center"
+    *ngIf="productArray.length > 0"
+  >
+    <h4 class="price-color text-center text-sm-end w-100 mb-3 mb-sm-0">Total: ${{ getTotal() }}</h4>
+
+    <button class="btn btn-danger" (click)="clearCart()">Clear Cart</button>
+  </div>
+
+  <ng-template #emptyCart>
+    <div class="text-center text-muted mt-5">
+      <p>Your cart is empty.</p>
+    </div>
+  </ng-template>
+
+</div>
+
+
+

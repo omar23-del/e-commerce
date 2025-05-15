@@ -1,1 +1,171 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+:root {
+  --main-color: #007bff;
+  --sec-color: rgb(213, 212, 212);
+}
+
+.active-link {
+  background-color: var(--main-color) !important;
+  border-radius: 5px !important;
+}
+
+.main-btn:disabled {
+  opacity: .5;
+}
+
+.toast-success {
+  background-color: #0d6dfdb1;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-added-to-cart {
+  background-color: #0d6dfdb1;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-error {
+  background-color: rgba(255, 0, 0, 0.505);
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-indicators button {
+  border: 2px solid var(--main-color);
+  background-color: transparent;
+  margin: 0 5px;
+}
+
+.carousel-indicators .active {
+  background-color: var(--main-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--main-color);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.carousel-control-prev-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 7.793a.5.5 0 0 0 0 .707l6.146 6.147a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0L11.5 7.793a.5.5 0 0 1 0 .707l-6.146 6.147a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+.carousel-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.custom-card {
+  height: 620px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+.card-img-top {
+  height: 400px;
+  object-fit: contain;
+}
+
+.golden-star {
+  color: gold;
+}
+
+.price-color {
+  color: green;
+}
+
+.cart-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  padding: 10px 0;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.cart-btn i {
+  margin-right: 5px;
+}
+
+.cart-btn:hover {
+  background-color: #0056b3;
+}
+
+.both-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.bg-gray-transparent {
+  background-color: rgba(108, 117, 125, 0.545);
+  transition: background-color 0.3s ease;
+}
